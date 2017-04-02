@@ -7,4 +7,4 @@
 * **página**: parte do site vista por um navegador web 
 * **filme**: video publicado no Facebook
 * **figura**: imagem publicada no Facebook
-* **email** método de envio de mensagens e arquivos pela internet
+* **email**: método de envio de mensagens e arquivos pela internet
