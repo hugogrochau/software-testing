@@ -10,3 +10,4 @@
 | 2017-04-02 | 3 hrs            | Hugo           | redigir a especificação | Escrevi as regras de negocio, dividi a historieta e atualizei o dicionário e as regras. Comecei o caso de uso.|
 | 2017-04-05 | 30 min           | Leonardo       | revisar a especificação | Revisei o trabalho feito até então.  |
 | 2017-04-05 | 3 hrs            | Leonardo       | redigir a especificação | Terminei o caso de uso e escrevi parte dos fatores de fidedignidade.  |
+| 2017-04-05 | 3 hrs            | Hugo           | redigir a especificação | Terminei o caso de uso e escrevi parte dos fatores de fidedignidade.  |
