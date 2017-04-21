@@ -55,12 +55,12 @@ Impossivel      :
 ********************************************************/
 
 #include    <stdio.h>
-#include    <direct.h>
+#include    <unistd.h>
 #include    <string.h>
 #include    <stdlib.h>
 #include    <ctype.h>
 #include    <math.h>
-#include    <io.h>
+#include    <stdio.h>
 
 /* Constantes internas do m¢dulo */
 

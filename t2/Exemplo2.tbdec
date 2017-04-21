@@ -1,20 +1,20 @@
-// Exemplo tabela de decis„o
+// Exemplo tabela de decis√£o
 //                1  2  3  4  5  6  7  8  9
 Usuario existe  : -  t  t  t  t  t  -  f  t
 Senha valida    : -  t  t  -  f  f  -  -  -
-Captcha correto : -  t  t  t  t  t  f  t  t  
+Captcha correto : -  t  t  t  t  t  f  t  t
 
 Botao Login     : -  t  f  f  t  f  -  -  f
 Botao Troca     : -  -  t  f  -  t  -  -  f
 Botao Esqueci   : -  -  -  t  -  -  -  -  f
 Botao Cancela   : t  f  f  f  f  f  f  f  f
- 
+
 ===========================================
 
-Cancela         : x        
+Cancela         : x
 
-Autoriza        :    x        
-Troca senha     :       x  
+Autoriza        :    x
+Troca senha     :       x
 Esqueci senha   :          x
 
 Erro usuario    :             x  x     x
