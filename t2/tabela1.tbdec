@@ -1,0 +1,12 @@
+// Exibir carrinho de compras
+
+Sistema acessível:           : f  t  t  t  t
+Número de itens valido       : -  t  f  t  f
+Número de itens invalido     : -  f  t  t  f
+
+==================================================
+
+Erro de acesso                 x
+Exibe carrinho                    x
+Erro de tamanho                      x
+Impossível                              x  x

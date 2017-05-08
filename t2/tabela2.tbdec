@@ -1,0 +1,17 @@
+// Exibir carrinho de compras
+
+Conectado à internet         : f  t  t  t  t  t
+Sistema no ar                : -  f  t  t  t  t
+Número de itens = 0          : -  -  t  -  -  f
+Número de itens < 0          : -  -  -  t  -  f
+Número de itens > 1000       : -  -  -  -  t  f
+Número de itens > 0 & < 1000 : -  -  -  -  -  t
+
+==================================================
+
+Erro sem conexão               x
+Erro fora do ar                   x
+Mensagem carrinho vazio              x
+Exibe sem paginação                           x
+Exibe com paginação                        x
+Impossível                              x
