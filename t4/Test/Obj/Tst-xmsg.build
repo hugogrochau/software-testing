@@ -1,0 +1,7 @@
+/OUT:Tst-xmsg.EXE
+/INCREMENTAL:NO
+/MACHINE:IX86
+main.obj  breakpnt.obj  string.obj  xmessage.obj  xmsgbcd.obj  
+xmsgbin.obj  xmsgstr.obj  xmsgtime.obj  tst_xmsg.obj  
+..\..\Global\Lib\talismantestlib.lib
+

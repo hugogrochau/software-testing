@@ -1,0 +1,20 @@
+
+
+#################### Compilacao do construto: Tst-xmsg
+
+main.cpp
+xmessage.cpp
+xmsgbcd.cpp
+xmsgbin.cpp
+xmsgstr.cpp
+xmsgtime.cpp
+tst_xmsg.cpp
+Microsoft (R) Incremental Linker Version 12.00.21005.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/OUT:Tst-xmsg.EXE 
+/INCREMENTAL:NO 
+/MACHINE:IX86 
+main.obj breakpnt.obj string.obj xmessage.obj xmsgbcd.obj 
+xmsgbin.obj xmsgstr.obj xmsgtime.obj tst_xmsg.obj 
+..\..\Global\Lib\talismantestlib.lib 
