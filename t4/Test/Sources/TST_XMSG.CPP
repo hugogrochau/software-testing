@@ -406,10 +406,10 @@
 
             if ( Mode )
             {
-               vtObj[ inxObj ]->AddItem( inxItem + 1 , new  XMSG_ItemTime( MSG_TimeCurrent )) ;
+               vtObj[ inxObj ]->AddItem( inxItem , new  XMSG_ItemTime( MSG_TimeCurrent )) ;
             } else
             {
-               vtObj[ inxObj ]->AddItem( inxItem + 1 , new  XMSG_ItemTime( MSG_TimeInitial )) ;
+               vtObj[ inxObj ]->AddItem( inxItem , new  XMSG_ItemTime( MSG_TimeInitial )) ;
             } /* if */
 
             return TST_RetCodeOK ;
