@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: tst-xmsg.comp
 
    Nome do Construto:           Tst-xmsg
-   Diretório base:              C:\Users\hugo\Documents\PUC\INF1413_2017-1_Trabalho_4\Test\Comp
+   Diretório base:              C:\Users\hugo\Documents\PUC\software-testing\t4\Test\Comp
 
    Arquivo composição:          tst-xmsg.comp
    Arquivo plataforma:          ..\..\tools\programs\ms-cpp.parm

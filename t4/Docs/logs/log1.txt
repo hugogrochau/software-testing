@@ -1,0 +1,359 @@
+
+
+LES - Laboratorio de Engenharia de Software
+   Talisman unit test, version 0001.00-00, build 00001 (c) 2007
+
+!!! Base folder name: ..\testcase
+!!! Script file name: tst-xmsg-01
+!!! Event log to be directed to console.
+!!! Statistics will not be accumulated.
+!!! Count passage.
+!!! ------------------------------
+
+2017/06/16-15:40:17 : Log start: EVENT
+
+!!! **************************************************
+2017/06/16-15:40:17 : !!! Start test, script file: tst-xmsg-01.script
+
+// Script:    Test-msg-01.script
+// Author:    Arndt von Staa
+// Date:      03/jun/2007
+// Purpose:   Test messages, failure generating commands
+      6 == Declare parameters
+     26 == save the number of data spaces     **************************************************
+!!!      Line 27  ========== Starting clock: 1 
+     32 == Start counting     **************************************************
+     35 == message with no parameters
+     38 == Assemble message with 0 fields
+     41 == destroy message
+     44 == message with field at the beginning
+     47 == assemble message with no parameter given
+>>> 1    Line 48  Incorrect message string. 
+    1    Line 48          Is: >??? d: !10 ??? Test 1 field beginning< 
+    1    Line 48   Should be: >??? d: !0 ??? Test 1 field beginning< 
+     50 == insert field and assemble message
+>>> 2    Line 52  Incorrect message string. 
+    2    Line 52          Is: >??? d: !10 ??? Test 1 field beginning< 
+    2    Line 52   Should be: >abcdef Test 1 field beginning< 
+     54 == destroy message
+     57 == Test message with one field in the middle
+>>> 3    Line 59  Incorrect message string. 
+    3    Line 59          Is: >Test 1 field??? d: !10 ??? middle< 
+    3    Line 59   Should be: >Test 1 field??? d: !0 ??? middle< 
+     61 == Insert item and test
+>>> 4    Line 63  Incorrect message string. 
+    4    Line 63          Is: >Test 1 field??? d: !10 ??? middle< 
+    4    Line 63   Should be: >Test 1 field abcdef middle< 
+     65 == destroy message
+     68 == Message with one field in the middle substituted by a string containing field at the beginnig
+>>> 5    Line 72  Incorrect message string. 
+    5    Line 72          Is: >Test 1 field??? d: !10 ??? middle< 
+    5    Line 72   Should be: >Test 1 field field inserted middle< 
+     74 == destroy message
+     77 == Message several items containing fields
+>>> 6    Line 82  Incorrect message string. 
+    6    Line 82          Is: >Test 1 field??? d: !10 ??? middle< 
+    6    Line 82   Should be: >Test 1 field field abc inserted middle< 
+     84 == destroy message
+     87 == Test message with one field at the end
+>>> 7    Line 89  Incorrect message string. 
+    7    Line 89          Is: >Test 1 field end??? d: !10 ??? < 
+    7    Line 89   Should be: >Test 1 field end??? d: !0 ??? < 
+     91 == Insert item and test
+>>> 8    Line 93  Incorrect message string. 
+    8    Line 93          Is: >Test 1 field end??? d: !10 ??? < 
+    8    Line 93   Should be: >Test 1 field end abcdef < 
+     95 == destroy message
+     98 == Test message with two fields at the beginning
+>>> 9    Line 100  Incorrect message string. 
+    9    Line 100          Is: >??? d: !10 ??? ??? f: !113 ???  Test 2 field beginning< 
+    9    Line 100   Should be: >??? d: !0 ??? ??? d: !13 ???  Test 2 field beginning< 
+    102 == Insert item and test
+>>> 10   Line 104  Incorrect message string. 
+    10   Line 104          Is: >??? d: !10 ??? ??? f: !113 ???  Test 2 field beginning< 
+    10   Line 104   Should be: >??? d: !0 ???  abcdef  Test 2 field beginning< 
+    106 == Insert item and test
+>>> 11   Line 108  Incorrect message string. 
+    11   Line 108          Is: >??? d: !10 ??? ??? f: !113 ???  Test 2 field beginning< 
+    11   Line 108   Should be: > xyz  abcdef  Test 2 field beginning< 
+    110 == destroy message
+    113 == Test message with two fields in the middle
+>>> 12   Line 117  Incorrect message string. 
+    12   Line 117          Is: >Test 2 ??? d: !10 ??? ??? f: !113 ???  field ??? d: !10 ???  middle< 
+    12   Line 117   Should be: >Test 2  xyz  abcdef  field  xyz  middle< 
+    119 == destroy message
+    122 == Test message with two fields at the end
+>>> 13   Line 124  Incorrect message string. 
+    13   Line 124          Is: >Test 2 field end ??? d: !10 ??? ??? f: !113 ??? < 
+    13   Line 124   Should be: >Test 2 field end ??? d: !0 ??? ??? d: !13 ??? < 
+    126 == Insert item and test
+>>> 14   Line 128  Incorrect message string. 
+    14   Line 128          Is: >Test 2 field end ??? d: !10 ??? ??? f: !113 ??? < 
+    14   Line 128   Should be: >Test 2 field end  abcdef ??? d: !13 ??? < 
+    130 == Insert item and test
+>>> 15   Line 132  Incorrect message string. 
+    15   Line 132          Is: >Test 2 field end ??? d: !10 ??? ??? f: !113 ??? < 
+    15   Line 132   Should be: >Test 2 field end  abcdef  xyz < 
+    134 == destroy message
+    137 == Test message with three fields
+>>> 16   Line 142  Incorrect message string. 
+    16   Line 142          Is: >??? d: !10 ??? Test 3 ??? f: !113 ??? 4 field ??? d: !11 ??? .< 
+    16   Line 142   Should be: >xyz Test 3 abcdef4 field hijklmn.< 
+    144 == Test message items
+>>> 17   Line 145  Incorrect type id value.  Is 0  Should be 3
+>>> 18   Line 146  No recovery provided. Command ignored:  =GetItem         MsgB    13  "abcdef"
+>>> 19   Line 147  Command ignored:  =GetItem         MsgB     1  "hijklmn"
+>>> 20   Line 148  Command ignored:  =GetItem         MsgB     0  "xyz "
+    150 == destroy message
+    153 == Test message with three fields and control characters in fields
+>>> 21   Line 158  Incorrect message string. 
+    21   Line 158          Is: >??? d: !10 ??? Test 3 ??? f: !113 ??? 4 field ??? d: !11 ??? .< 
+    21   Line 158   Should be: >  xyz Test 3 \x0Dabcdef4 field hijklmn\x00\x01.< 
+    160 == Test message items
+>>> 22   Line 161  Incorrect type id value.  Is 0  Should be 3
+>>> 23   Line 162  No recovery provided. Command ignored:  =GetItem         MsgB    13  "\x0Dabcdef"
+>>> 24   Line 163  Command ignored:  =GetItem         MsgB     1  "hijklmn\x00\x01"
+>>> 25   Line 164  Command ignored:  =GetItem         MsgB     0  "  xyz "
+    166 == destroy message
+    169 == Test message inserting string given by valid id
+>>> 26   Line 172  Incorrect message string. 
+    26   Line 172          Is: >Test 1 field??? d: !10 ??? middle< 
+    26   Line 172   Should be: >Test 1 fieldENFORCEmiddle< 
+    174 == destroy message
+    177 == Test message inserting string given by valid id
+>>> 27   Line 180  Incorrect message string. 
+    27   Line 180          Is: >Test 1 field??? d: !10 ??? middle< 
+    27   Line 180   Should be: >Test 1 field?!?!?!? String id 10 not found.middle< 
+    182 == destroy message
+    185 == Test message with only one field invalid argument
+>>> 28   Line 188  Incorrect message string. 
+    28   Line 188          Is: >??? d: !10 ??? < 
+    28   Line 188   Should be: >??? d: !0 ??? < 
+    190 == destroy message
+    193 == Test message with only one field
+>>> 29   Line 196  Incorrect message string. 
+    29   Line 196          Is: >??? d: !10 ??? < 
+    29   Line 196   Should be: >hijklmn< 
+    198 == destroy message
+    201 == Test message with only one null string field
+>>> 30   Line 204  Incorrect message string. 
+    30   Line 204          Is: >??? d: !10 ??? < 
+    30   Line 204   Should be: >< 
+    206 == destroy message
+    209 == Test message with illegal string id and no items
+>>> 31   Line 211  Incorrect message string. 
+    31   Line 211          Is: >??? Message id ??? f: !119 ???  not found.< 
+    31   Line 211   Should be: >??? Message id 1111 not found.< 
+    213 == destroy message
+    216 == Test message with illegal string id and one item
+>>> 32   Line 219  Incorrect message string. 
+    32   Line 219          Is: >??? Message id ??? f: !119 ???  not found. Item[2]: abc< 
+    32   Line 219   Should be: >??? Message id 22222 not found. Item[1]: abc< 
+    221 == destroy message
+    224 == Test message with illegal string id and two items
+>>> 33   Line 228  Incorrect message string. 
+    33   Line 228          Is: >??? Message id ??? f: !119 ???  not found. Item[2]: 12345 Item[6]: ##vwxyz< 
+    33   Line 228   Should be: >??? Message id 54321 not found. Item[2]: 12345 Item[5]: ##vwxyz< 
+    230 == destroy message
+    233 == Test message with illegal field id
+>>> 34   Line 236  Incorrect message string. 
+    34   Line 236          Is: >??? d: !10 ??? < 
+    34   Line 236   Should be: >Illegal field id ??? f: !20 ??? < 
+    238 == destroy message
+    241 == Test message with %%
+>>> 35   Line 245  Incorrect message string. 
+    35   Line 245          Is: >??? d: !10 ??? < 
+    35   Line 245   Should be: >%2 starts with character %2< 
+    247 == destroy message
+    250 == Test message with ilegal character after %
+>>> 36   Line 253  Incorrect message string. 
+    36   Line 253          Is: >??? d: !10 ??? < 
+    36   Line 253   Should be: >Illegal char ??? c: !c ??? c< 
+    255 == destroy message
+    258 == Test message with integer value
+>>> 37   Line 261  Incorrect message string. 
+    37   Line 261          Is: >??? d: !10 ??? < 
+    37   Line 261   Should be: >12345< 
+    263 == Verify BCD type
+    266 == destroy message
+    269 == Test message with negative integer value
+>>> 38   Line 272  Incorrect message string. 
+    38   Line 272          Is: >??? d: !10 ??? < 
+    38   Line 272   Should be: >-1< 
+    274 == destroy message
+    277 == Test message with 2 digit (1 byte) positive BCD number
+>>> 39   Line 280  Incorrect message string. 
+    39   Line 280          Is: >??? d: !10 ??? < 
+    39   Line 280   Should be: >1< 
+    282 == Verify BCD type
+    285 == destroy message
+    288 == Test message with 4 digit (2 bytes) positive BCD number
+>>> 40   Line 291  Incorrect message string. 
+    40   Line 291          Is: >??? d: !10 ??? < 
+    40   Line 291   Should be: >790< 
+    293 == destroy message
+    296 == Test message with 6 digit (3 bytes) positive BCD number
+>>> 41   Line 299  Incorrect message string. 
+    41   Line 299          Is: >??? d: !10 ??? < 
+    41   Line 299   Should be: >67890< 
+    301 == destroy message
+    304 == Test message with 8 digit (4 bytes) positive BCD number
+>>> 42   Line 307  Incorrect message string. 
+    42   Line 307          Is: >??? d: !10 ??? < 
+    42   Line 307   Should be: >4567890< 
+    309 == destroy message
+    312 == Test message with 10 digit (5 bytes) positive BCD number
+>>> 43   Line 315  Incorrect message string. 
+    43   Line 315          Is: >??? d: !10 ??? < 
+    43   Line 315   Should be: >234567890< 
+    317 == destroy message
+    320 == Test message with negative 2 digit BCD number
+>>> 44   Line 323  Incorrect message string. 
+    44   Line 323          Is: >??? d: !10 ??? < 
+    44   Line 323   Should be: >-1< 
+    325 == destroy message
+    328 == Test message with negative 4 digit BCD number
+>>> 45   Line 331  Incorrect message string. 
+    45   Line 331          Is: >??? d: !10 ??? < 
+    45   Line 331   Should be: >-1< 
+    333 == destroy message
+    336 == Test message with negative 6 digit BCD number
+>>> 46   Line 339  Incorrect message string. 
+    46   Line 339          Is: >??? d: !10 ??? < 
+    46   Line 339   Should be: >-1< 
+    341 == destroy message
+    344 == Test message with negative 8 digit BCD number
+>>> 47   Line 347  Incorrect message string. 
+    47   Line 347          Is: >??? d: !10 ??? < 
+    47   Line 347   Should be: >-1< 
+    349 == destroy message
+    351 == Test replace incorrect message id
+>>> 48   Line 355  Incorrect message string. 
+    48   Line 355          Is: >Test 1 field??? d: !10 ??? middle< 
+    48   Line 355   Should be: >??? Message id 12 not found. Item[5]: abcdef< 
+    357 == destroy message
+    360 == Test get message id and replace message id
+>>> 49   Line 364  Incorrect message string. 
+    49   Line 364          Is: >Test 1 field??? d: !10 ??? middle< 
+    49   Line 364   Should be: >Test 1 field abcdef middle< 
+    366 == Replace item and test
+>>> 50   Line 368  Incorrect message string. 
+    50   Line 368          Is: >Test 1 field??? d: !10 ??? middle< 
+    50   Line 368   Should be: >Test 1 field end abcdef < 
+    370 == destroy message
+    373 == Test replace incorrect message id
+>>> 51   Line 377  Incorrect message string. 
+    51   Line 377          Is: >Test 1 field??? d: !10 ??? middle< 
+    51   Line 377   Should be: >??? Message id 12 not found. Item[5]: abcdef< 
+    379 == destroy message
+    382 == Test message with current time
+>>> 52   Line 385  Incorrect message string. 
+    52   Line 385          Is: >??? d: !10 ??? < 
+    52   Line 385   Should be: >xxx< 
+<<< 51   Line 386  Expected failure or error has been recovered. 
+    388 == Verify time type
+>>> 52   Line 389  Incorrect type id value.  Is 0  Should be 4
+    391 == Verify type of inexisting item
+    394 == Verify get inexisting item
+    397 == destroy message
+    400 == Test message with one illegal field index
+
+>>> 53   Line 402  Tester caught a program exception, context -1 >>
+--- EXC: ENFORCE: Failing expression: ( 0 <= index ) && ( index < XMSG_DIM_ITEMS )
+        Exception thrown in Line: 191  File: ..\sources\xmessage.cpp
+
+<<< 52   Line 403  Expected exception has been ignored.
+ 
+>>> 53   Line 404  Incorrect message string. 
+    53   Line 404          Is: >??? d: !10 ??? < 
+    53   Line 404   Should be: >??? d: !0 ??? < 
+    406 == destroy message
+    409 == Test message with current time
+>>> 54   Line 412  Incorrect message string. 
+    54   Line 412          Is: >??? d: !10 ??? < 
+    54   Line 412   Should be: >xxx< 
+<<< 53   Line 413  Expected failure or error has been recovered. 
+    415 == destroy message
+    418 == Test message with session start time
+>>> 54   Line 421  Incorrect message string. 
+    54   Line 421          Is: >??? d: !10 ??? < 
+    54   Line 421   Should be: >xxx< 
+<<< 53   Line 422  Expected failure or error has been recovered. 
+    424 == destroy message
+    427 == Test message with recurring field
+>>> 54   Line 430  Incorrect message string. 
+    54   Line 430          Is: >Test 1 field??? d: !10 ??? middle< 
+    54   Line 430   Should be: >Test 1 field??? Too many fields. Id: 0 ???aaaaaaaaaaaaaaaaaaaaaaaaaaaaaamiddle< 
+    432 == Stop counting     **************************************************
+ccc 54   Line 433  Counter value:     3  name: Append items to nonexisting message 
+ccc 54   Line 433  Counter value:     3  name: Assemble with error message string 
+ccc 54   Line 433  Counter value:     0  name: Assemble with error message string - 01 
+ccc 54   Line 433  Counter value:    57  name: Assemble with error message string - 02 
+ccc 54   Line 433  Counter value:     3  name: Assemble with error message string - 03 
+ccc 54   Line 433  Counter value:     3  name: Assemble with error message string id 
+ccc 54   Line 433  Counter value:    49  name: Assemble with existing message string 
+ccc 54   Line 433  Counter value:    60  name: Get field number 
+ccc 54   Line 433  Counter value:    60  name: Get the modified string 
+ccc 54   Line 433  Counter value:     0  name: Handle % character 
+ccc 54   Line 433  Counter value:    60  name: Handle a field 
+ccc 54   Line 433  Counter value:    60  name: Handle field refering to item 
+ccc 54   Line 433  Counter value:    12  name: Handle illegal field index 
+ccc 54   Line 433  Counter value:    60  name: Handle illegal field syntax 
+ccc 54   Line 433  Counter value:     0  name: Handle too many replacements - avoids recursive rplacements 
+ccc 54   Line 433  Counter value:     0  name: Handle unknown field code 
+ccc 54   Line 433  Counter value:    50  name: MSG  !Add item 
+ccc 54   Line 433  Counter value:    49  name: MSG  !Assemble the message string 
+ccc 54   Line 433  Counter value:     1  name: MSG  !Get message id 
+ccc 54   Line 433  Counter value:     7  name: MSG  !Get message item 
+ccc 54   Line 433  Counter value:    41  name: MSG  !Message constructor 
+ccc 54   Line 433  Counter value:    40  name: MSG  !Message destructor 
+ccc 54   Line 433  Counter value:     3  name: MSG  !Replace message id 
+ccc 54   Line 433  Counter value:    49  name: MSG  $Do assemble message 
+ccc 54   Line 433  Counter value:  1450  name: MSG  $Do assemble message - 01 
+ccc 54   Line 433  Counter value:    72  name: MSG  $Do assemble message - 02 
+ccc 54   Line 433  Counter value:     6  name: MSG  $Do assemble message - 03 
+ccc 54   Line 433  Counter value:     0  name: MSG  $Do assemble message - 04 
+ccc 54   Line 433  Counter value:    48  name: MSG  $Do assemble message - 05 
+ccc 54   Line 433  Counter value:     0  name: MSG  $Do assemble message - 06 
+ccc 54   Line 433  Counter value:    53  name: MSGI Message item constructor 
+ccc 54   Line 433  Counter value:    52  name: MSGI Message item destructor 
+ccc 54   Line 433  Counter value:  1450  name: Next char 
+ccc 54   Line 433  Counter value:    48  name: Replace field by item string 
+ccc 54   Line 433  Counter value:     0  name: testecontador 
+>>> 55   Line 435  Zero count in counter: Assemble with error message string - 01
+>>> 56   Line 435  Zero count in counter: Handle % character
+>>> 57   Line 435  Zero count in counter: Handle too many replacements - avoids recursive rplacements
+>>> 58   Line 435  Zero count in counter: Handle unknown field code
+>>> 59   Line 435  Zero count in counter: MSG  $Do assemble message - 04
+>>> 60   Line 435  Zero count in counter: MSG  $Do assemble message - 06
+>>> 61   Line 435  Zero count in counter: testecontador
+>>> 62   Line 435  Incorrect number of counters containing zero  Is 7  Should be 0
+    437 == Clear all spaces
+    440 == Verify memory leakage
+!!!      Line 441  ========== Clock 0 elapsed time: 0.002 
+
+2017/06/16-15:40:17 : !!! End of test, script file: tst-xmsg-01.script
+!!! **************************************************
+!!! 62   Line 443   Verifying counters at end of test run 
+ccc 62   Line 443  Zero count in counter: Assemble with error message string - 01
+ccc 62   Line 443  Zero count in counter: Handle % character
+ccc 62   Line 443  Zero count in counter: Handle too many replacements - avoids recursive rplacements
+ccc 62   Line 443  Zero count in counter: Handle unknown field code
+ccc 62   Line 443  Zero count in counter: MSG  $Do assemble message - 04
+ccc 62   Line 443  Zero count in counter: MSG  $Do assemble message - 06
+ccc 62   Line 443  Zero count in counter: testecontador
+
+!!! --------------------
+!!!  Test ended
+     Test statistics:   Test files 1  Test cases 104  Test commands 220  Test lines 443
+     Test ending condition: >>> 62 <<< failures found.
+
+2017/06/16-15:40:17 : Log end: EVENT
+
+
+!!! ------------------------------
+
+>>> TEST found 62 problems.
+
+!!! ------------------------------
+
