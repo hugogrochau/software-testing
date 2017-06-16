@@ -29,7 +29,6 @@ LES - Laboratorio de Engenharia de Software
      44 == message with field at the beginning
      47 == assemble message with no parameter given
      50 == insert field and assemble message
-// 2 =======
      55 == destroy message
      58 == Test message with one field in the middle
      62 == Insert item and test

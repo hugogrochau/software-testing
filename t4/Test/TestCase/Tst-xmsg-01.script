@@ -76,7 +76,8 @@
 
 == Message several items containing fields
 =NewMessage      MsgB    MSG_3_1FieldMid
-=AddStringItem   MsgB    6  stringpointerfield  " abc"
+// 3 =======
+=AddStringItem   MsgB    1  stringpointerfield  " abc"
 =AddStringItem   MsgB    5  stringpointerfield  " field%1"
 =AddStringItem   MsgB    0  stringpointerfield  "%5 inserted "
 =AssembleMessage MsgB    "Test 1 field field abc inserted middle"
