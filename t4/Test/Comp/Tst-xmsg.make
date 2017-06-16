@@ -165,7 +165,7 @@ $(Fobj)\main.obj :  {$(Pcpp)}\main.cpp \
     {$(Phpp)}simplist.hpp         {$(Phpp)}sioctrl.hpp          {$(Phpp)}sls_elem.hpp         \
     {$(Phpp)}specific-test.hpp    {$(Phpp)}string.hpp           {$(Phpp)}symbtab.hpp          \
     {$(Pinc)}talisman_constants.inc {$(Pinc)}talisman_versioncontrol.inc {$(Phpp)}tst_rtst.hpp         \
-    {$(Phpp)}tst_str.hpp          {$(Pinc)}typeidmessageitem.inc
+    {$(Phpp)}tst_xmsg.hpp         {$(Pinc)}typeidmessageitem.inc {$(Phpp)}xmessage.hpp        
     CL $(O) $(CDB) $(DEFS) /Fo$(Fobj)\  $(Fcpp)\$(@B).cpp >> $(Ferr)\$(NOME).err
 
 $(Fobj)\breakpnt.obj :  {$(Pcpp)}\breakpnt.cpp \

@@ -61,7 +61,6 @@ Estatísticas do construto
       message.hpp
       specific-test.hpp
       string.cpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -163,7 +162,6 @@ Estatísticas do construto
       main.cpp
       specific-test.hpp
       string.cpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -189,7 +187,6 @@ Estatísticas do construto
    Arquivos em que é incluído
       main.cpp
       specific-test.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
 
@@ -214,8 +211,9 @@ Estatísticas do construto
       talisman_constants.inc
       talisman_versioncontrol.inc
       tst_rtst.hpp
-      tst_str.hpp
+      tst_xmsg.hpp
       typeidmessageitem.inc
+      xmessage.hpp
 
    Estatísticas do arquivo: message.hpp
       Total linhas:             470
@@ -234,7 +232,6 @@ Estatísticas do construto
       main.cpp
       specific-test.hpp
       string.cpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -260,7 +257,6 @@ Estatísticas do construto
       gnrctest.hpp
       main.cpp
       specific-test.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
 
@@ -280,7 +276,6 @@ Estatísticas do construto
       specific-test.hpp
       string.cpp
       symbtab.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -302,7 +297,6 @@ Estatísticas do construto
       main.cpp
       readtest.hpp
       specific-test.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
 
@@ -322,7 +316,6 @@ Estatísticas do construto
       specific-test.hpp
       string.cpp
       symbtab.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -349,8 +342,9 @@ Estatísticas do construto
       symbtab.hpp
       talisman_constants.inc
       tst_rtst.hpp
-      tst_str.hpp
+      tst_xmsg.hpp
       typeidmessageitem.inc
+      xmessage.hpp
    Arquivos em que é incluído
       main.cpp
 
@@ -595,7 +589,6 @@ Estatísticas do construto
       string.cpp
       symbtab.hpp
       time.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -660,7 +653,6 @@ Estatísticas do construto
       readtest.hpp
       specific-test.hpp
       string.cpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -691,7 +683,6 @@ Estatísticas do construto
       string.hpp
       symbtab.hpp
       time.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -742,38 +733,14 @@ Estatísticas do construto
       main.cpp
       readtest.hpp
       specific-test.hpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
-
-   Estatísticas do arquivo: tst_str.hpp
-      Total linhas:             315
-      Linhas de código:          29
-      Linhas de comentário:     201
-      Linhas em branco:          28
-   Arquivos de inclusão de que necessita
-      bcdarit.hpp
-      exceptn.hpp
-      gnrctest.hpp
-      message.hpp
-      readtest.hpp
-      simplist.hpp
-      sioctrl.hpp
-      sls_elem.hpp
-      string.hpp
-      symbtab.hpp
-      talisman_constants.inc
-      tst_rtst.hpp
-      typeidmessageitem.inc
-   Arquivos em que é incluído
-      main.cpp
-      specific-test.hpp
 
    Estatísticas do arquivo: tst_xmsg.cpp
       Total linhas:             717
       Linhas de código:         428
-      Linhas de comentário:     138
-      Linhas em branco:         163
+      Linhas de comentário:     139
+      Linhas em branco:         162
    Arquivos de inclusão de que necessita
       bcdarit.hpp
       counters.hpp
@@ -820,6 +787,8 @@ Estatísticas do construto
       typeidmessageitem.inc
       xmessage.hpp
    Arquivos em que é incluído
+      main.cpp
+      specific-test.hpp
       tst_xmsg.cpp
 
    Estatísticas do arquivo: typeidmessageitem.inc
@@ -835,7 +804,6 @@ Estatísticas do construto
       message.hpp
       specific-test.hpp
       string.cpp
-      tst_str.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -850,9 +818,9 @@ Estatísticas do construto
       xmsgtime.hpp
 
    Estatísticas do arquivo: xmessage.cpp
-      Total linhas:             488
+      Total linhas:             489
       Linhas de código:         229
-      Linhas de comentário:     120
+      Linhas de comentário:     121
       Linhas em branco:         140
    Arquivos de inclusão de que necessita
       bcdarit.hpp
@@ -883,6 +851,8 @@ Estatísticas do construto
       talisman_constants.inc
       typeidmessageitem.inc
    Arquivos em que é incluído
+      main.cpp
+      specific-test.hpp
       tst_xmsg.cpp
       tst_xmsg.hpp
       xmessage.cpp
@@ -1054,11 +1024,11 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          8
 
   Tipo: hpp      Path: ..\sources
-         Total linhas do tipo:      9728
-         Linhas de código:          1246
-         Linhas de comentário:      5237
-         Linhas em branco:          1393
-         Arquivos deste tipo:         24
+         Total linhas do tipo:      9413
+         Linhas de código:          1217
+         Linhas de comentário:      5036
+         Linhas em branco:          1365
+         Arquivos deste tipo:         23
 
   Tipo: ferram   Path: ..\..\tools\programs
          Total linhas do tipo:         0
@@ -1103,17 +1073,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:         20
 
   Tipo: cpp      Path: ..\sources
-         Total linhas do tipo:      3346
+         Total linhas do tipo:      3347
          Linhas de código:          1755
-         Linhas de comentário:       753
-         Linhas em branco:           818
+         Linhas de comentário:       755
+         Linhas em branco:           817
          Arquivos deste tipo:          9
 
 Totais para todo o construto Tst-xmsg
 
-   Total linhas:             14794
-   Linhas de código:          3586
-   Linhas de comentário:      6745
-   Linhas em branco:          2564
-   Arquivos processados:        63
+   Total linhas:             14480
+   Linhas de código:          3557
+   Linhas de comentário:      6546
+   Linhas em branco:          2535
+   Arquivos processados:        62
 

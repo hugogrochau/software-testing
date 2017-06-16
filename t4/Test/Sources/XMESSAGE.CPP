@@ -167,8 +167,9 @@
    {
       CNT_Count( "MSG  !Replace message id" ) ;
 
-      int idMessage = idMessageParm ;
-      idMessage ++ ;
+/* 4 ======= */
+      idMessage = idMessageParm ;
+
    } // End of function: MSG  !Replace message id
 
 ////////////////////////////////////////////////////////////////////////////

@@ -352,7 +352,8 @@
 == Test replace incorrect message id
 
 =NewMessage       MsgB    MSG_3_1FieldMid
-=ReplaceMessageId MsgB    MSG_10_0Field
+=AddStringItem    MsgB    0 stringpointerfield  " abcdef"
+=ReplaceMessageId MsgB    MSG_4_1FieldEnd
 =AssembleMessage  MsgB    "??? Message id 12 not found. Item[5]: abcdef"
 
 == destroy message
