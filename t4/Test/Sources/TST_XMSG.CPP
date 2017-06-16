@@ -279,8 +279,8 @@
                default :
                   return TST_RetCodeParmError ;
             } /* switch */
-
-            vtObj[ inxObj ]->AddItem( inxItem + 1 , pItemString ) ;
+            // 3 ======
+            vtObj[ inxObj ]->AddItem( inxItem, pItemString ) ;
 
             return TST_RetCodeOK ;
 
