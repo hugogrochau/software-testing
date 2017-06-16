@@ -5,6 +5,9 @@
 *.elf
 ~$*
 
+# Temporary files
+*.tmp
+
 # Precompiled Headers
 *.gch
 *.pch

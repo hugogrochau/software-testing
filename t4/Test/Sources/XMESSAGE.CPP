@@ -345,7 +345,8 @@
                      CNT_Count( "Get field number" ) ;
 
                      countChar   = 1 ;
-                     inxItem     = 1 ;
+                     /* 1 ======= */
+                     inxItem     = 0 ;
 
                      while ( isdigit( msgString[ inxChar + countChar ] ))
                      {

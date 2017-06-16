@@ -48,7 +48,8 @@
 =AssembleMessage MsgA    "??? d: !0 ??? Test 1 field beginning"
 
 == insert field and assemble message
-=AddStringItem   MsgA    0  charvaluefield  "abcdef "
+// 2 =======
+=AddStringItem   MsgA    0  stringpointerfield  "abcdef "
 =AssembleMessage MsgA    "abcdef Test 1 field beginning"
 
 == destroy message
