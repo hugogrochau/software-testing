@@ -403,7 +403,7 @@
             {
                return TST_RetCodeParmError ;
             } /* if */
-
+            /* 5 ======= */
             if ( Mode )
             {
                vtObj[ inxObj ]->AddItem( inxItem , new  XMSG_ItemTime( MSG_TimeCurrent )) ;

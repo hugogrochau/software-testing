@@ -369,8 +369,8 @@
                      if ( countReplacements > MAX_REPLACEMENTS )
                      {
                         CNT_Count( "Handle too many replacements - avoids recursive rplacements" ) ;
-
-                        messageId =  MSG_ErrorIllegalIndex ;
+                        /* 6 ======= */
+                        messageId =  MSG_TooManyFields ;
 
                      } // end selection: Handle too many replacements - avoids recursive rplacements
 
