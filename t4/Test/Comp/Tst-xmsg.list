@@ -739,8 +739,8 @@ Estatísticas do construto
    Estatísticas do arquivo: tst_xmsg.cpp
       Total linhas:             717
       Linhas de código:         428
-      Linhas de comentário:     139
-      Linhas em branco:         162
+      Linhas de comentário:     140
+      Linhas em branco:         161
    Arquivos de inclusão de que necessita
       bcdarit.hpp
       counters.hpp
@@ -818,9 +818,9 @@ Estatísticas do construto
       xmsgtime.hpp
 
    Estatísticas do arquivo: xmessage.cpp
-      Total linhas:             489
-      Linhas de código:         229
-      Linhas de comentário:     121
+      Total linhas:             490
+      Linhas de código:         228
+      Linhas de comentário:     123
       Linhas em branco:         140
    Arquivos de inclusão de que necessita
       bcdarit.hpp
@@ -1073,17 +1073,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:         20
 
   Tipo: cpp      Path: ..\sources
-         Total linhas do tipo:      3347
-         Linhas de código:          1755
-         Linhas de comentário:       755
-         Linhas em branco:           817
+         Total linhas do tipo:      3348
+         Linhas de código:          1754
+         Linhas de comentário:       758
+         Linhas em branco:           816
          Arquivos deste tipo:          9
 
 Totais para todo o construto Tst-xmsg
 
-   Total linhas:             14480
-   Linhas de código:          3557
-   Linhas de comentário:      6546
-   Linhas em branco:          2535
+   Total linhas:             14481
+   Linhas de código:          3556
+   Linhas de comentário:      6549
+   Linhas em branco:          2534
    Arquivos processados:        62
 

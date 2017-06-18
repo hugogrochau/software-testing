@@ -1,0 +1,204 @@
+
+
+LES - Laboratorio de Engenharia de Software
+   Talisman unit test, version 0001.00-00, build 00001 (c) 2007
+
+!!! Base folder name: ..\testcase
+!!! Script file name: tst-xmsg-01
+!!! Event log to be directed to console.
+!!! Statistics will not be accumulated.
+!!! Count passage.
+!!! ------------------------------
+
+2017/06/18-16:47:52 : Log start: EVENT
+
+!!! **************************************************
+2017/06/18-16:47:52 : !!! Start test, script file: tst-xmsg-01.script
+
+// Script:    Test-msg-01.script
+// Author:    Arndt von Staa
+// Date:      03/jun/2007
+// Purpose:   Test messages, failure generating commands
+      6 == Declare parameters
+     26 == save the number of data spaces     **************************************************
+!!!      Line 27  ========== Starting clock: 1 
+     32 == Start counting     **************************************************
+     35 == message with no parameters
+     38 == Assemble message with 0 fields
+     41 == destroy message
+     44 == message with field at the beginning
+     47 == assemble message with no parameter given
+     50 == insert field and assemble message
+     54 == destroy message
+     57 == Test message with one field in the middle
+     61 == Insert item and test
+     65 == destroy message
+     68 == Message with one field in the middle substituted by a string containing field at the beginnig
+     74 == destroy message
+     77 == Message several items containing fields
+// 3 =======
+     85 == destroy message
+     88 == Test message with one field at the end
+     92 == Insert item and test
+     96 == destroy message
+     99 == Test message with two fields at the beginning
+    103 == Insert item and test
+    107 == Insert item and test
+    111 == destroy message
+    114 == Test message with two fields in the middle
+    120 == destroy message
+    123 == Test message with two fields at the end
+    127 == Insert item and test
+    131 == Insert item and test
+    135 == destroy message
+    138 == Test message with three fields
+    145 == Test message items
+    151 == destroy message
+    154 == Test message with three fields and control characters in fields
+    161 == Test message items
+    167 == destroy message
+    170 == Test message inserting string given by valid id
+    175 == destroy message
+    178 == Test message inserting string given by valid id
+    183 == destroy message
+    186 == Test message with only one field invalid argument
+    191 == destroy message
+    194 == Test message with only one field
+    199 == destroy message
+    202 == Test message with only one null string field
+    207 == destroy message
+    210 == Test message with illegal string id and no items
+    214 == destroy message
+    217 == Test message with illegal string id and one item
+    222 == destroy message
+    225 == Test message with illegal string id and two items
+    231 == destroy message
+    234 == Test message with illegal field id
+    239 == destroy message
+    242 == Test message with %%
+    248 == destroy message
+    251 == Test message with ilegal character after %
+    256 == destroy message
+    259 == Test message with integer value
+    264 == Verify BCD type
+    267 == destroy message
+    270 == Test message with negative integer value
+    275 == destroy message
+    278 == Test message with 2 digit (1 byte) positive BCD number
+    283 == Verify BCD type
+    286 == destroy message
+    289 == Test message with 4 digit (2 bytes) positive BCD number
+    294 == destroy message
+    297 == Test message with 6 digit (3 bytes) positive BCD number
+    302 == destroy message
+    305 == Test message with 8 digit (4 bytes) positive BCD number
+    310 == destroy message
+    313 == Test message with 10 digit (5 bytes) positive BCD number
+    318 == destroy message
+    321 == Test message with negative 2 digit BCD number
+    326 == destroy message
+    329 == Test message with negative 4 digit BCD number
+    334 == destroy message
+    337 == Test message with negative 6 digit BCD number
+    342 == destroy message
+    345 == Test message with negative 8 digit BCD number
+    350 == destroy message
+    353 == Test replace incorrect message id
+// 7 =======
+    360 == destroy message
+    363 == Test get message id and replace message id
+    369 == Replace item and test
+    373 == destroy message
+    376 == Test replace incorrect message id
+    382 == destroy message
+    385 == Test message with current time
+>>> 1    Line 388  Incorrect message string. 
+    1    Line 388          Is: >2017/06/18-16:47:52< 
+    1    Line 388   Should be: >xxx< 
+<<< 0    Line 389  Expected failure or error has been recovered. 
+    391 == Verify time type
+    394 == Verify type of inexisting item
+    397 == Verify get inexisting item
+    400 == destroy message
+    403 == Test message with one illegal field index
+
+>>> 1    Line 405  Tester caught a program exception, context -1 >>
+--- EXC: ENFORCE: Failing expression: ( 0 <= index ) && ( index < XMSG_DIM_ITEMS )
+        Exception thrown in Line: 192  File: ..\sources\xmessage.cpp
+
+<<< 0    Line 406  Expected exception has been ignored.
+ 
+    409 == destroy message
+    412 == Test message with current time
+>>> 1    Line 415  Incorrect message string. 
+    1    Line 415          Is: >2017/06/18-16:47:52< 
+    1    Line 415   Should be: >xxx< 
+<<< 0    Line 416  Expected failure or error has been recovered. 
+    418 == destroy message
+    421 == Test message with session start time
+>>> 1    Line 424  Incorrect message string. 
+    1    Line 424          Is: >2017/06/18-16:47:52< 
+    1    Line 424   Should be: >xxx< 
+<<< 0    Line 425  Expected failure or error has been recovered. 
+    427 == destroy message
+    430 == Test message with recurring field
+    435 == destroy message
+// 8 =======
+    439 == Test assemble message with error message string and item in last slot
+    444 == Stop counting     **************************************************
+ccc 0    Line 445  Counter value:     6  name: Append items to nonexisting message 
+ccc 0    Line 445  Counter value:     6  name: Assemble with error message string 
+ccc 0    Line 445  Counter value:     1  name: Assemble with error message string - 01 
+ccc 0    Line 445  Counter value:   114  name: Assemble with error message string - 02 
+ccc 0    Line 445  Counter value:     5  name: Assemble with error message string - 03 
+ccc 0    Line 445  Counter value:     6  name: Assemble with error message string id 
+ccc 0    Line 445  Counter value:    50  name: Assemble with existing message string 
+ccc 0    Line 445  Counter value:    96  name: Get field number 
+ccc 0    Line 445  Counter value:    98  name: Get the modified string 
+ccc 0    Line 445  Counter value:     2  name: Handle % character 
+ccc 0    Line 445  Counter value:    99  name: Handle a field 
+ccc 0    Line 445  Counter value:    96  name: Handle field refering to item 
+ccc 0    Line 445  Counter value:     1  name: Handle illegal field index 
+ccc 0    Line 445  Counter value:    14  name: Handle illegal field syntax 
+ccc 0    Line 445  Counter value:     1  name: Handle too many replacements - avoids recursive rplacements 
+ccc 0    Line 445  Counter value:     1  name: Handle unknown field code 
+ccc 0    Line 445  Counter value:    52  name: MSG  !Add item 
+ccc 0    Line 445  Counter value:    50  name: MSG  !Assemble the message string 
+ccc 0    Line 445  Counter value:     1  name: MSG  !Get message id 
+ccc 0    Line 445  Counter value:    13  name: MSG  !Get message item 
+ccc 0    Line 445  Counter value:    42  name: MSG  !Message constructor 
+ccc 0    Line 445  Counter value:    41  name: MSG  !Message destructor 
+ccc 0    Line 445  Counter value:     3  name: MSG  !Replace message id 
+ccc 0    Line 445  Counter value:    50  name: MSG  $Do assemble message 
+ccc 0    Line 445  Counter value:  1234  name: MSG  $Do assemble message - 01 
+ccc 0    Line 445  Counter value:   112  name: MSG  $Do assemble message - 02 
+ccc 0    Line 445  Counter value:     6  name: MSG  $Do assemble message - 03 
+ccc 0    Line 445  Counter value:    83  name: MSG  $Do assemble message - 04 
+ccc 0    Line 445  Counter value:    11  name: MSG  $Do assemble message - 05 
+ccc 0    Line 445  Counter value:     1  name: MSG  $Do assemble message - 06 
+ccc 0    Line 445  Counter value:    58  name: MSGI Message item constructor 
+ccc 0    Line 445  Counter value:    57  name: MSGI Message item destructor 
+ccc 0    Line 445  Counter value:  1233  name: Next char 
+ccc 0    Line 445  Counter value:    94  name: Replace field by item string 
+    449 == Clear all spaces
+    452 == Verify memory leakage
+!!!      Line 453  ========== Clock 0 elapsed time: 0.000 
+
+2017/06/18-16:47:52 : !!! End of test, script file: tst-xmsg-01.script
+!!! **************************************************
+!!! 0    Line 455   Verifying counters at end of test run 
+
+!!! --------------------
+!!!  Test ended
+     Test statistics:   Test files 1  Test cases 106  Test commands 231  Test lines 455
+     Test ending condition: No failures found.
+
+2017/06/18-16:47:52 : Log end: EVENT
+
+
+!!! ------------------------------
+
+!!! TEST OK.
+
+!!! ------------------------------
+
