@@ -349,12 +349,13 @@
 
 == destroy message
 =DestroyMessage  MsgA
-== Test replace incorrect message id
 
+== Test replace incorrect message id
 =NewMessage       MsgB    MSG_3_1FieldMid
-=AddStringItem    MsgB    0 stringpointerfield  " abcdef"
-=ReplaceMessageId MsgB    MSG_4_1FieldEnd
-=AssembleMessage  MsgB    "??? Message id 12 not found. Item[5]: abcdef"
+=AddStringItem    MsgB    0 stringpointerfield  "abcdef"
+// 7 =======
+=ReplaceMessageId MsgB    12
+=AssembleMessage  MsgB    "??? Message id 12 not found. Item[0]: abcdef"
 
 == destroy message
 =DestroyMessage   MsgB
