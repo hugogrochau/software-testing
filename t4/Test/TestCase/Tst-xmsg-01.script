@@ -432,6 +432,15 @@
 =AddStringItem   MsgC    0  stringpointerfield  "%0a"
 =AssembleMessage MsgC    "Test 1 field??? Too many fields. Id: 0 ???aaaaaaaaaaaaaaaaaaaaaaaaaaaaaamiddle"
 
+== destroy message
+=DestroyMessage  MsgC
+
+// 8 =======
+== Test assemble message with error message string and item in last slot
+=NewMessage      MsgC    11
+=AddStringItem MsgC      19  stringpointerfield "a"
+=AssembleMessage MsgC    "??? Message id 11 not found."
+
 == Stop counting     **************************************************
 =CounterDisplay
 =CounterStop
