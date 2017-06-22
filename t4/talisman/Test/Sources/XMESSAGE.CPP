@@ -228,7 +228,8 @@
 
          CNT_Count( "Assemble with existing message string" ) ;
          STR_String * messageString = new STR_String( idMessage ) ;
-         if(!mutacao1){
+         if ( !mutacao1)
+         {
             if ( memcmp( STR_ID_NOT_FOUND , messageString->GetString( ) ,
                         strlen( STR_ID_NOT_FOUND )) != 0  )
             {
@@ -237,7 +238,8 @@
                   return messageString ;
             } /* end if */
          }
-         else{
+         else
+         {
             if ( memcmp( STR_ID_NOT_FOUND , messageString->GetString( ) ,
                         strlen( STR_ID_NOT_FOUND )) == 0  )
             {
@@ -245,7 +247,7 @@
 
                   return messageString ;
             } /* end if */
-         }
+         } /* end else */
          delete messageString ;
          messageString = NULL ;
 
@@ -257,20 +259,22 @@
 
             CNT_Count( "Assemble with error message string" ) ;
             messageString = new STR_String( MSG_ErrorIdNotFound ) ;
-            if(!mutacao2){
+            if ( !mutacao2 )
+            {
                   if ( vtItems[ INX_LAST_ITEM ] != NULL )
                   {
                   CNT_Count( "Assemble with error message string - 01" ) ;
                   delete vtItems[ INX_LAST_ITEM ] ;
-                  } /* if */
-            }
-            else{
+                  } /* end if */
+            } /* end if */
+            else
+            {
                  if ( vtItems[ INX_LAST_ITEM ] == NULL )
                   {
                   CNT_Count( "Assemble with error message string - 01" ) ;
                   delete vtItems[ INX_LAST_ITEM ] ;
-                  } /* if */ 
-            }
+                  } /* end if */ 
+            } /* end else */
             
             vtItems[ INX_LAST_ITEM ] = new XMSG_ItemInteger( idMessage & STR_ID ) ;
 
@@ -284,7 +288,8 @@
 
             STR_String Separator(    MSG_Separator    ) ;
             STR_String SeparatorEnd( MSG_SeparatorEnd ) ;
-            if(!mutacao3){
+            if ( !mutacao3 )
+            {
                   for( int i = 0 ; i < XMSG_DIM_ITEMS - 1 ; i ++ )
                   {
                         CNT_Count( "Assemble with error message string - 02" ) ;
@@ -302,10 +307,11 @@
                               messageString->Append( pItemStr ) ;
                               delete pItemStr ;
 
-                        } /* if */
-                  } /* for */
-            }
-            else{
+                        } /* end if */
+                  } /* end for */
+            } /* end if */
+            else
+            {
                   for( int i = 0 ; i <= XMSG_DIM_ITEMS - 1 ; i ++ )
                   {
                         CNT_Count( "Assemble with error message string - 02" ) ;
@@ -323,9 +329,9 @@
                               messageString->Append( pItemStr ) ;
                               delete pItemStr ;
 
-                        } /* if */
-                  } /* for */
-            }
+                        } /* end if */
+                  } /* end for */
+            } /* end else */
             return messageString ;
 
    } // End of function: MSG  !Assemble the message string
