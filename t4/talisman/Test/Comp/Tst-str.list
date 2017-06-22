@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: tst-str.comp
 
    Nome do Construto:           Tst-str
-   Diretório base:              C:\Users\hugo\Documents\PUC\software-testing\t4\Test\Comp
+   Diretório base:              C:\Users\leo\Documents\GitHub\software-testing\t4\talisman\Test\Comp
 
    Arquivo composição:          tst-str.comp
    Arquivo plataforma:          ..\..\tools\programs\ms-cpp.parm

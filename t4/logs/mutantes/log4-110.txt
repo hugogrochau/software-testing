@@ -1,0 +1,382 @@
+
+
+LES - Laboratorio de Engenharia de Software
+   Talisman unit test, version 0001.00-00, build 00001 (c) 2007
+
+!!! Base folder name: ..\testcase
+!!! Script file name: tst-xmsg-01
+!!! Event log to be directed to console.
+!!! Statistics will not be accumulated.
+!!! Count passage.
+!!! ------------------------------
+
+2017/06/21-23:34:04 : Log start: EVENT
+
+!!! **************************************************
+2017/06/21-23:34:04 : !!! Start test, script file: tst-xmsg-01.script
+
+// Script:    Test-msg-01.script
+// Author:    Arndt von Staa
+// Date:      03/jun/2007
+// Purpose:   Test messages, failure generating commands
+      6 == Declare parameters
+     26 == save the number of data spaces     **************************************************
+!!!      Line 27  ========== Starting clock: 1 
+     32 == Start counting     **************************************************
+     35 == message with no parameters
+     38 == Assemble message with 0 fields
+>>> 1    Line 39  Incorrect message string. 
+    1    Line 39          Is: >??? Message id 30181 not found.< 
+    1    Line 39   Should be: >Test 0 fields< 
+     41 == destroy message
+     44 == message with field at the beginning
+     47 == assemble message with no parameter given
+>>> 2    Line 48  Incorrect message string. 
+    2    Line 48          Is: >??? Message id 30182 not found.< 
+    2    Line 48   Should be: >??? d: !0 ??? Test 1 field beginning< 
+     50 == insert field and assemble message
+>>> 3    Line 52  Incorrect message string. 
+    3    Line 52          Is: >??? Message id 30182 not found. Item[0]: abcdef < 
+    3    Line 52   Should be: >abcdef Test 1 field beginning< 
+     54 == destroy message
+     57 == Test message with one field in the middle
+>>> 4    Line 59  Incorrect message string. 
+    4    Line 59          Is: >??? Message id 30183 not found.< 
+    4    Line 59   Should be: >Test 1 field??? d: !0 ??? middle< 
+     61 == Insert item and test
+>>> 5    Line 63  Incorrect message string. 
+    5    Line 63          Is: >??? Message id 30183 not found. Item[0]:  abcdef < 
+    5    Line 63   Should be: >Test 1 field abcdef middle< 
+     65 == destroy message
+     68 == Message with one field in the middle substituted by a string containing field at the beginnig
+>>> 6    Line 72  Incorrect message string. 
+    6    Line 72          Is: >??? Message id 30183 not found. Item[0]: %5 inserted  Item[5]:  field< 
+    6    Line 72   Should be: >Test 1 field field inserted middle< 
+     74 == destroy message
+     77 == Message several items containing fields
+// 3 =======
+>>> 7    Line 83  Incorrect message string. 
+    7    Line 83          Is: >??? Message id 30183 not found. Item[0]: %5 inserted  Item[1]:  abc Item[5]:  field%1< 
+    7    Line 83   Should be: >Test 1 field field abc inserted middle< 
+     85 == destroy message
+     88 == Test message with one field at the end
+>>> 8    Line 90  Incorrect message string. 
+    8    Line 90          Is: >??? Message id 30184 not found.< 
+    8    Line 90   Should be: >Test 1 field end??? d: !0 ??? < 
+     92 == Insert item and test
+>>> 9    Line 94  Incorrect message string. 
+    9    Line 94          Is: >??? Message id 30184 not found. Item[0]:  abcdef < 
+    9    Line 94   Should be: >Test 1 field end abcdef < 
+     96 == destroy message
+     99 == Test message with two fields at the beginning
+>>> 10   Line 101  Incorrect message string. 
+    10   Line 101          Is: >??? Message id 30185 not found.< 
+    10   Line 101   Should be: >??? d: !0 ??? ??? d: !13 ???  Test 2 field beginning< 
+    103 == Insert item and test
+>>> 11   Line 105  Incorrect message string. 
+    11   Line 105          Is: >??? Message id 30185 not found. Item[13]:  abcdef < 
+    11   Line 105   Should be: >??? d: !0 ???  abcdef  Test 2 field beginning< 
+    107 == Insert item and test
+>>> 12   Line 109  Incorrect message string. 
+    12   Line 109          Is: >??? Message id 30185 not found. Item[0]:  xyz  Item[13]:  abcdef < 
+    12   Line 109   Should be: > xyz  abcdef  Test 2 field beginning< 
+    111 == destroy message
+    114 == Test message with two fields in the middle
+>>> 13   Line 118  Incorrect message string. 
+    13   Line 118          Is: >??? Message id 30186 not found. Item[0]:  xyz  Item[13]:  abcdef < 
+    13   Line 118   Should be: >Test 2  xyz  abcdef  field  xyz  middle< 
+    120 == destroy message
+    123 == Test message with two fields at the end
+>>> 14   Line 125  Incorrect message string. 
+    14   Line 125          Is: >??? Message id 30187 not found.< 
+    14   Line 125   Should be: >Test 2 field end ??? d: !0 ??? ??? d: !13 ??? < 
+    127 == Insert item and test
+>>> 15   Line 129  Incorrect message string. 
+    15   Line 129          Is: >??? Message id 30187 not found. Item[0]:  abcdef < 
+    15   Line 129   Should be: >Test 2 field end  abcdef ??? d: !13 ??? < 
+    131 == Insert item and test
+>>> 16   Line 133  Incorrect message string. 
+    16   Line 133          Is: >??? Message id 30187 not found. Item[0]:  abcdef  Item[13]:  xyz < 
+    16   Line 133   Should be: >Test 2 field end  abcdef  xyz < 
+    135 == destroy message
+    138 == Test message with three fields
+>>> 17   Line 143  Incorrect message string. 
+    17   Line 143          Is: >??? Message id 30188 not found. Item[0]: xyz  Item[1]: hijklmn Item[13]: abcdef< 
+    17   Line 143   Should be: >xyz Test 3 abcdef4 field hijklmn.< 
+    145 == Test message items
+    151 == destroy message
+    154 == Test message with three fields and control characters in fields
+>>> 18   Line 159  Incorrect message string. 
+    18   Line 159          Is: >??? Message id 30188 not found. Item[0]:   xyz  Item[1]: hijklmn\x00\x01 Item[13]: \x0Dabcdef< 
+    18   Line 159   Should be: >  xyz Test 3 \x0Dabcdef4 field hijklmn\x00\x01.< 
+    161 == Test message items
+    167 == destroy message
+    170 == Test message inserting string given by valid id
+>>> 19   Line 173  Incorrect message string. 
+    19   Line 173          Is: >??? Message id 30183 not found. Item[0]: ENFORCE< 
+    19   Line 173   Should be: >Test 1 fieldENFORCEmiddle< 
+    175 == destroy message
+    178 == Test message inserting string given by valid id
+>>> 20   Line 181  Incorrect message string. 
+    20   Line 181          Is: >??? Message id 30183 not found. Item[0]: ?!?!?!? String id 10 not found.< 
+    20   Line 181   Should be: >Test 1 field?!?!?!? String id 10 not found.middle< 
+    183 == destroy message
+    186 == Test message with only one field invalid argument
+>>> 21   Line 189  Incorrect message string. 
+    21   Line 189          Is: >??? Message id 30189 not found. Item[1]: hijklmn< 
+    21   Line 189   Should be: >??? d: !0 ??? < 
+    191 == destroy message
+    194 == Test message with only one field
+>>> 22   Line 197  Incorrect message string. 
+    22   Line 197          Is: >??? Message id 30189 not found. Item[0]: hijklmn< 
+    22   Line 197   Should be: >hijklmn< 
+    199 == destroy message
+    202 == Test message with only one null string field
+>>> 23   Line 205  Incorrect message string. 
+    23   Line 205          Is: >??? Message id 30189 not found. Item[0]: < 
+    23   Line 205   Should be: >< 
+    207 == destroy message
+    210 == Test message with illegal string id and no items
+>>> 24   Line 212  Incorrect message string. 
+    24   Line 212          Is: >?!?!?!? String id 1111 not found.< 
+    24   Line 212   Should be: >??? Message id 1111 not found.< 
+    214 == destroy message
+    217 == Test message with illegal string id and one item
+>>> 25   Line 220  Incorrect message string. 
+    25   Line 220          Is: >?!?!?!? String id 22222 not found.< 
+    25   Line 220   Should be: >??? Message id 22222 not found. Item[1]: abc< 
+    222 == destroy message
+    225 == Test message with illegal string id and two items
+>>> 26   Line 229  Incorrect message string. 
+    26   Line 229          Is: >?!?!?!? String id 54321 not found.< 
+    26   Line 229   Should be: >??? Message id 54321 not found. Item[2]: 12345 Item[5]: ##vwxyz< 
+    231 == destroy message
+    234 == Test message with illegal field id
+>>> 27   Line 237  Incorrect message string. 
+    27   Line 237          Is: >??? Message id 30189 not found. Item[0]: Illegal field id %20< 
+    27   Line 237   Should be: >Illegal field id ??? f: !20 ??? < 
+    239 == destroy message
+    242 == Test message with %%
+>>> 28   Line 246  Incorrect message string. 
+    28   Line 246          Is: >??? Message id 30189 not found. Item[0]: %1 starts with character %%2 Item[1]: %%2< 
+    28   Line 246   Should be: >%2 starts with character %2< 
+    248 == destroy message
+    251 == Test message with ilegal character after %
+>>> 29   Line 254  Incorrect message string. 
+    29   Line 254          Is: >??? Message id 30189 not found. Item[0]: Illegal char %c< 
+    29   Line 254   Should be: >Illegal char ??? c: !c ??? c< 
+    256 == destroy message
+    259 == Test message with integer value
+>>> 30   Line 262  Incorrect message string. 
+    30   Line 262          Is: >??? Message id 30189 not found. Item[0]: 12345< 
+    30   Line 262   Should be: >12345< 
+    264 == Verify BCD type
+    267 == destroy message
+    270 == Test message with negative integer value
+>>> 31   Line 273  Incorrect message string. 
+    31   Line 273          Is: >??? Message id 30189 not found. Item[0]: -1< 
+    31   Line 273   Should be: >-1< 
+    275 == destroy message
+    278 == Test message with 2 digit (1 byte) positive BCD number
+>>> 32   Line 281  Incorrect message string. 
+    32   Line 281          Is: >??? Message id 30189 not found. Item[0]: 1< 
+    32   Line 281   Should be: >1< 
+    283 == Verify BCD type
+    286 == destroy message
+    289 == Test message with 4 digit (2 bytes) positive BCD number
+>>> 33   Line 292  Incorrect message string. 
+    33   Line 292          Is: >??? Message id 30189 not found. Item[0]: 790< 
+    33   Line 292   Should be: >790< 
+    294 == destroy message
+    297 == Test message with 6 digit (3 bytes) positive BCD number
+>>> 34   Line 300  Incorrect message string. 
+    34   Line 300          Is: >??? Message id 30189 not found. Item[0]: 67890< 
+    34   Line 300   Should be: >67890< 
+    302 == destroy message
+    305 == Test message with 8 digit (4 bytes) positive BCD number
+>>> 35   Line 308  Incorrect message string. 
+    35   Line 308          Is: >??? Message id 30189 not found. Item[0]: 4567890< 
+    35   Line 308   Should be: >4567890< 
+    310 == destroy message
+    313 == Test message with 10 digit (5 bytes) positive BCD number
+>>> 36   Line 316  Incorrect message string. 
+    36   Line 316          Is: >??? Message id 30189 not found. Item[0]: 234567890< 
+    36   Line 316   Should be: >234567890< 
+    318 == destroy message
+    321 == Test message with negative 2 digit BCD number
+>>> 37   Line 324  Incorrect message string. 
+    37   Line 324          Is: >??? Message id 30189 not found. Item[0]: -1< 
+    37   Line 324   Should be: >-1< 
+    326 == destroy message
+    329 == Test message with negative 4 digit BCD number
+>>> 38   Line 332  Incorrect message string. 
+    38   Line 332          Is: >??? Message id 30189 not found. Item[0]: -1< 
+    38   Line 332   Should be: >-1< 
+    334 == destroy message
+    337 == Test message with negative 6 digit BCD number
+>>> 39   Line 340  Incorrect message string. 
+    39   Line 340          Is: >??? Message id 30189 not found. Item[0]: -1< 
+    39   Line 340   Should be: >-1< 
+    342 == destroy message
+    345 == Test message with negative 8 digit BCD number
+>>> 40   Line 348  Incorrect message string. 
+    40   Line 348          Is: >??? Message id 30189 not found. Item[0]: -1< 
+    40   Line 348   Should be: >-1< 
+    350 == destroy message
+    353 == Test replace incorrect message id
+// 7 =======
+>>> 41   Line 358  Incorrect message string. 
+    41   Line 358          Is: >?!?!?!? String id 12 not found.< 
+    41   Line 358   Should be: >??? Message id 12 not found. Item[0]: abcdef< 
+    360 == destroy message
+    363 == Test get message id and replace message id
+>>> 42   Line 367  Incorrect message string. 
+    42   Line 367          Is: >??? Message id 30183 not found. Item[0]:  abcdef < 
+    42   Line 367   Should be: >Test 1 field abcdef middle< 
+    369 == Replace item and test
+>>> 43   Line 371  Incorrect message string. 
+    43   Line 371          Is: >??? Message id 30184 not found. Item[0]:  abcdef < 
+    43   Line 371   Should be: >Test 1 field end abcdef < 
+    373 == destroy message
+    376 == Test replace incorrect message id
+>>> 44   Line 380  Incorrect message string. 
+    44   Line 380          Is: >?!?!?!? String id 12 not found.< 
+    44   Line 380   Should be: >??? Message id 12 not found. Item[5]: abcdef< 
+    382 == destroy message
+    385 == Test message with current time
+>>> 45   Line 388  Incorrect message string. 
+    45   Line 388          Is: >??? Message id 30189 not found. Item[0]: 2017/06/21-23:34:04< 
+    45   Line 388   Should be: >xxx< 
+<<< 44   Line 389  Expected failure or error has been recovered. 
+    391 == Verify time type
+    394 == Verify type of inexisting item
+    397 == Verify get inexisting item
+    400 == destroy message
+    403 == Test message with one illegal field index
+
+>>> 45   Line 405  Tester caught a program exception, context -1 >>
+--- EXC: ENFORCE: Failing expression: ( 0 <= index ) && ( index < XMSG_DIM_ITEMS )
+        Exception thrown in Line: 192  File: ..\sources\xmessage.cpp
+
+<<< 44   Line 406  Expected exception has been ignored.
+ 
+>>> 45   Line 407  Incorrect message string. 
+    45   Line 407          Is: >??? Message id 30189 not found.< 
+    45   Line 407   Should be: >??? d: !0 ??? < 
+    409 == destroy message
+    412 == Test message with current time
+>>> 46   Line 415  Incorrect message string. 
+    46   Line 415          Is: >??? Message id 30189 not found. Item[0]: 2017/06/21-23:34:04< 
+    46   Line 415   Should be: >xxx< 
+<<< 45   Line 416  Expected failure or error has been recovered. 
+    418 == destroy message
+    421 == Test message with session start time
+>>> 46   Line 424  Incorrect message string. 
+    46   Line 424          Is: >??? Message id 30189 not found. Item[0]: 2017/06/21-23:34:04< 
+    46   Line 424   Should be: >xxx< 
+<<< 45   Line 425  Expected failure or error has been recovered. 
+    427 == destroy message
+    430 == Test message with recurring field
+>>> 46   Line 433  Incorrect message string. 
+    46   Line 433          Is: >??? Message id 30183 not found. Item[0]: %0a< 
+    46   Line 433   Should be: >Test 1 field??? Too many fields. Id: 0 ???aaaaaaaaaaaaaaaaaaaaaaaaaaaaaamiddle< 
+    435 == destroy message
+// 8 =======
+    439 == Test assemble message with error message string and item in last slot
+>>> 47   Line 442  Incorrect message string. 
+    47   Line 442          Is: >?!?!?!? String id 11 not found.< 
+    47   Line 442   Should be: >??? Message id 11 not found.< 
+    444 == Stop counting     **************************************************
+ccc 47   Line 445  Counter value:    44  name: Append items to nonexisting message 
+ccc 47   Line 445  Counter value:    44  name: Assemble with error message string 
+ccc 47   Line 445  Counter value:    36  name: Assemble with error message string - 01 
+ccc 47   Line 445  Counter value:   836  name: Assemble with error message string - 02 
+ccc 47   Line 445  Counter value:    48  name: Assemble with error message string - 03 
+ccc 47   Line 445  Counter value:    44  name: Assemble with error message string id 
+ccc 47   Line 445  Counter value:    50  name: Assemble with existing message string 
+ccc 47   Line 445  Counter value:    44  name: Get field number 
+ccc 47   Line 445  Counter value:    44  name: Get the modified string 
+ccc 47   Line 445  Counter value:     0  name: Handle % character 
+ccc 47   Line 445  Counter value:    44  name: Handle a field 
+ccc 47   Line 445  Counter value:    44  name: Handle field refering to item 
+ccc 47   Line 445  Counter value:     0  name: Handle illegal field index 
+ccc 47   Line 445  Counter value:     0  name: Handle illegal field syntax 
+ccc 47   Line 445  Counter value:     0  name: Handle too many replacements - avoids recursive rplacements 
+ccc 47   Line 445  Counter value:     0  name: Handle unknown field code 
+ccc 47   Line 445  Counter value:    52  name: MSG  !Add item 
+ccc 47   Line 445  Counter value:    50  name: MSG  !Assemble the message string 
+ccc 47   Line 445  Counter value:     1  name: MSG  !Get message id 
+ccc 47   Line 445  Counter value:    13  name: MSG  !Get message item 
+ccc 47   Line 445  Counter value:    42  name: MSG  !Message constructor 
+ccc 47   Line 445  Counter value:    41  name: MSG  !Message destructor 
+ccc 47   Line 445  Counter value:     3  name: MSG  !Replace message id 
+ccc 47   Line 445  Counter value:    50  name: MSG  $Do assemble message 
+ccc 47   Line 445  Counter value:  1602  name: MSG  $Do assemble message - 01 
+ccc 47   Line 445  Counter value:    88  name: MSG  $Do assemble message - 02 
+ccc 47   Line 445  Counter value:     0  name: MSG  $Do assemble message - 03 
+ccc 47   Line 445  Counter value:    44  name: MSG  $Do assemble message - 04 
+ccc 47   Line 445  Counter value:     0  name: MSG  $Do assemble message - 05 
+ccc 47   Line 445  Counter value:     0  name: MSG  $Do assemble message - 06 
+ccc 47   Line 445  Counter value:    96  name: MSGI Message item constructor 
+ccc 47   Line 445  Counter value:    87  name: MSGI Message item destructor 
+ccc 47   Line 445  Counter value:  1602  name: Next char 
+ccc 47   Line 445  Counter value:    44  name: Replace field by item string 
+>>> 48   Line 447  Zero count in counter: Handle % character
+>>> 49   Line 447  Zero count in counter: Handle illegal field index
+>>> 50   Line 447  Zero count in counter: Handle illegal field syntax
+>>> 51   Line 447  Zero count in counter: Handle too many replacements - avoids recursive rplacements
+>>> 52   Line 447  Zero count in counter: Handle unknown field code
+>>> 53   Line 447  Zero count in counter: MSG  $Do assemble message - 03
+>>> 54   Line 447  Zero count in counter: MSG  $Do assemble message - 05
+>>> 55   Line 447  Zero count in counter: MSG  $Do assemble message - 06
+>>> 56   Line 447  Incorrect number of counters containing zero  Is 8  Should be 0
+    449 == Clear all spaces
+    452 == Verify memory leakage
+!!!      Line 453  ========== Clock 0 elapsed time: 0.005 
+>>> 57   Line 454  Check memory leakage. Incorrect number of data spaces  Is 184  Should be 176
+
+2017/06/21-23:34:04 : !!! End of test, script file: tst-xmsg-01.script
+!!! **************************************************
+!!! 57   Line 455   Verifying counters at end of test run 
+ccc 57   Line 455  Zero count in counter: Handle % character
+ccc 57   Line 455  Zero count in counter: Handle illegal field index
+ccc 57   Line 455  Zero count in counter: Handle illegal field syntax
+ccc 57   Line 455  Zero count in counter: Handle too many replacements - avoids recursive rplacements
+ccc 57   Line 455  Zero count in counter: Handle unknown field code
+ccc 57   Line 455  Zero count in counter: MSG  $Do assemble message - 03
+ccc 57   Line 455  Zero count in counter: MSG  $Do assemble message - 05
+ccc 57   Line 455  Zero count in counter: MSG  $Do assemble message - 06
+
+!!! --------------------
+!!!  Test ended
+     Test statistics:   Test files 1  Test cases 106  Test commands 231  Test lines 455
+     Test ending condition: >>> 57 <<< failures found.
+
+2017/06/21-23:34:04 : Log end: EVENT
+
+
+>>> 65 Allocated data spaces remain: 8, verify memory leakage.
+
+>>> Log closed: ---DataSpace  Id:  1248  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F572C0
+>>> Log closed: ---DataSpace  Id:   680  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F56F00
+>>> Log closed: ---DataSpace  Id:   666  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F57000
+>>> Log closed: ---DataSpace  Id:   586  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F57280
+>>> Log closed: ---DataSpace  Id:   570  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F56F80
+>>> Log closed: ---DataSpace  Id:   537  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F573C0
+>>> Log closed: ---DataSpace  Id:   422  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F57680
+>>> Log closed: ---DataSpace  Id:   391  Size:     8  Line:   275  File:     xmessage.cpp   Addr: 00F57040
+>>> Log closed: 
+!!! Spaces still allocated:          8
+>>> Log closed: 
+!!! Total data spaces allocated:  1579
+>>> Log closed: 
+!!! Total data spaces deleted:    1521
+>>> Log closed:  
+
+
+!!! ------------------------------
+
+>>> TEST found 65 problems.
+
+!!! ------------------------------
+

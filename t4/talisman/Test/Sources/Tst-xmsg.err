@@ -2,7 +2,8 @@
 
 #################### Compilacao do construto: Tst-xmsg
 
-xmsgbcd.cpp
+main.cpp
+xmessage.cpp
 Microsoft (R) Incremental Linker Version 12.00.21005.1
 Copyright (C) Microsoft Corporation.  All rights reserved.
 

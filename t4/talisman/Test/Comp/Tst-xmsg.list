@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: tst-xmsg.comp
 
    Nome do Construto:           Tst-xmsg
-   Diretório base:              C:\Users\hugo\Documents\PUC\software-testing\t4\Test\Comp
+   Diretório base:              C:\Users\leo\Documents\GitHub\software-testing\t4\talisman\Test\Comp
 
    Arquivo composição:          tst-xmsg.comp
    Arquivo plataforma:          ..\..\tools\programs\ms-cpp.parm
@@ -818,9 +818,9 @@ Estatísticas do construto
       xmsgtime.hpp
 
    Estatísticas do arquivo: xmessage.cpp
-      Total linhas:             490
-      Linhas de código:         228
-      Linhas de comentário:     123
+      Total linhas:             529
+      Linhas de código:         267
+      Linhas de comentário:     124
       Linhas em branco:         140
    Arquivos de inclusão de que necessita
       bcdarit.hpp
@@ -1073,17 +1073,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:         20
 
   Tipo: cpp      Path: ..\sources
-         Total linhas do tipo:      3348
-         Linhas de código:          1754
-         Linhas de comentário:       758
+         Total linhas do tipo:      3387
+         Linhas de código:          1793
+         Linhas de comentário:       759
          Linhas em branco:           816
          Arquivos deste tipo:          9
 
 Totais para todo o construto Tst-xmsg
 
-   Total linhas:             14481
-   Linhas de código:          3556
-   Linhas de comentário:      6549
+   Total linhas:             14520
+   Linhas de código:          3595
+   Linhas de comentário:      6550
    Linhas em branco:          2534
    Arquivos processados:        62
 
