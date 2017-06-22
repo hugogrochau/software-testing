@@ -222,9 +222,9 @@
       CNT_Count( "MSG  !Assemble the message string" ) ;
 
       // Assemble with existing message string
-         bool mutacao1 = true;
-         bool mutacao2 = true;
-         bool mutacao3 = true;
+         bool mutacao1 = false;
+         bool mutacao2 = false;
+         bool mutacao3 = false;
 
          CNT_Count( "Assemble with existing message string" ) ;
          STR_String * messageString = new STR_String( idMessage ) ;
